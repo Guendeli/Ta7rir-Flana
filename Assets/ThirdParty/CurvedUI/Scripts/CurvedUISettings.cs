@@ -131,12 +131,12 @@ namespace CurvedUI
                 {
                     if (!(castie is CurvedUIRaycaster))
                     {
-                        Destroy(castie);
-                        this.gameObject.AddComponent<CurvedUIRaycaster>();
+                        //Destroy(castie);
+                        //this.gameObject.AddComponent<CurvedUIRaycaster>();
                     }
                 }
                 else {
-                    this.gameObject.AddComponent<CurvedUIRaycaster>();
+                    //this.gameObject.AddComponent<CurvedUIRaycaster>();
                 }
 
                

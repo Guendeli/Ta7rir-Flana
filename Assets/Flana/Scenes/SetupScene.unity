@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 1009672016}
   - component: {fileID: 1009672015}
   - component: {fileID: 1009672014}
+  - component: {fileID: 1009672017}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -392,6 +393,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009672012}
+--- !u!114 &1009672017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009672012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e62188adca544cf1b96ccf1630f15f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DoNotTesselate: 0
+  savedPos: {x: 0, y: 0, z: 0}
+  savedUp: {x: 0, y: 1, z: 0}
+  savedRectSize: {x: 160, y: 30}
+  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedTextUV0: {x: 0, y: 0}
+  savedFill: 1
 --- !u!20 &1017045369 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20226246661059646, guid: 63286a8104395c644b2dc9a6c7190079,
@@ -461,6 +480,7 @@ GameObject:
   - component: {fileID: 1908545449}
   - component: {fileID: 1908545448}
   - component: {fileID: 1908545452}
+  - component: {fileID: 1908545453}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -525,7 +545,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1908545451
 RectTransform:
@@ -562,6 +582,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1908545453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908545447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a783f671592674b589cfc4953e28656b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shape: 0
+  controller: 3
+  quality: 1.02
+  interactable: 0
+  blocksRaycasts: 0
+  raycastMyLayerOnly: 0
+  angle: 90
+  preserveAspect: 1
+  vertAngle: 90
+  ringFill: 0.5
+  ringExternalDiamater: 1000
+  ringFlipVertical: 0
 --- !u!1 &1985632074
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +615,7 @@ GameObject:
   - component: {fileID: 1985632075}
   - component: {fileID: 1985632077}
   - component: {fileID: 1985632076}
+  - component: {fileID: 1985632078}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -636,3 +680,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1985632074}
+--- !u!114 &1985632078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1985632074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e62188adca544cf1b96ccf1630f15f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DoNotTesselate: 0
+  savedPos: {x: 0, y: 0, z: 0}
+  savedUp: {x: 0, y: 1, z: 0}
+  savedRectSize: {x: 160, y: 30}
+  savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  savedTextUV0: {x: 0, y: 0.0078125}
+  savedFill: 0
