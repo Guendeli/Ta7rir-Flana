@@ -196,6 +196,59 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de9eeef23b79a8d4bb494143037e0ae2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &358316509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 358316510}
+  - component: {fileID: 358316511}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &358316510
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358316509}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1668316372}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358316511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358316509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1488e22aaaf8647acbee589cbd6853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  threatQuestions:
+    catName: Threatening
+    questionClips: []
+  emotionalQuestions:
+    catName: Emotional
+    questionClips: []
+  physicalQuestions:
+    catName: Physical
+    questionClips: []
+  sexualQuestions:
+    catName: Sexual
+    questionClips: []
+  startingCategory: 0
 --- !u!1 &521843992
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +987,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1705523789}
+  - {fileID: 358316510}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1058,6 +1112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe11ac7a895cad4e9b68225bddff51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onStart: 0
   clipsList:
   - {fileID: 8300000, guid: de2c377df46d395419de3f4455a5ae13, type: 3}
   - {fileID: 8300000, guid: 1dbb2cfd7789f284aa8e09bf87810729, type: 3}

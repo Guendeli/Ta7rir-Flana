@@ -9,6 +9,7 @@ public class LoopableAudioPlayer : MonoBehaviour {
      *      Loopable Audio Player utility class
      *  Plays one or more audio clips, waits a delay and replay 
      */
+    public bool onStart;
     public List<AudioClip> clipsList;
     public float initDelay;
     public float interSoundDelay;
@@ -19,7 +20,11 @@ public class LoopableAudioPlayer : MonoBehaviour {
     private int _clipCounter;
     // Use this for initialization
 	void Start () {
-        Invoke("InitPlay", initDelay);	
+        _audioSource = GetComponent<AudioSource>();
+        if (onStart)
+        {
+            Invoke("InitPlay", initDelay);
+        }
 	}
 	
 	// Update is called once per frame
@@ -31,7 +36,6 @@ public class LoopableAudioPlayer : MonoBehaviour {
 
     private void InitPlay()
     {
-        _audioSource = GetComponent<AudioSource>();
         _clipCounter = 0;
         if (!_audioSource.playOnAwake)
         {
@@ -64,5 +68,22 @@ public class LoopableAudioPlayer : MonoBehaviour {
                 Debug.Log("Will replay after " + replayDelay + " Seconds");
             }
         }
+    }
+
+    // public methods here: used from QuizzManager
+
+    public void ResetQuizz()
+    {
+        if(clipsList.Count > 0)
+        {
+            clipsList.Clear();
+            clipsList = new List<AudioClip>();
+        }
+    }
+
+    public void SetQuestionAndPlay(AudioClip clip)
+    {
+        clipsList.Add(clip);
+        InitPlay();
     }
 }
