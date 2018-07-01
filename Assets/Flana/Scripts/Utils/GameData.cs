@@ -16,9 +16,12 @@ public struct CategoryQuestions
 {
     public string catName;
     public List<AudioClip> questionClips;
+    public List<string> questionTitle;
+    public List<Sprite> questionImages;
 }
 
-public class GameData {
+public static class GameData {
 
-	
+    public static CategoryName GAME_CATEGORY;
+    public static string USER_ID = string.Empty;
 }

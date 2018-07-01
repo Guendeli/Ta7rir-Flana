@@ -19,17 +19,21 @@ public class LoopableAudioPlayer : MonoBehaviour {
     private bool _hasStarted;
     private int _clipCounter;
     // Use this for initialization
-	void Start () {
+	void Awake () {
         _audioSource = GetComponent<AudioSource>();
+	}
+
+    void Start()
+    {
         if (onStart)
         {
             Invoke("InitPlay", initDelay);
         }
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        CheckNextClip();
+        //CheckNextClip();
 	}
 
     // helper methods are written here
@@ -42,7 +46,7 @@ public class LoopableAudioPlayer : MonoBehaviour {
             _audioSource.clip = clipsList[_clipCounter];
             _audioSource.Play();
             _hasStarted = true;
-            Debug.Log("Started playing Clip n° " + _clipCounter);
+           
         }
     }
 
@@ -58,14 +62,14 @@ public class LoopableAudioPlayer : MonoBehaviour {
             {
                 _audioSource.clip = clipsList[_clipCounter];
                 _audioSource.Play();
-                Debug.Log("Started playing Clip n° " + _clipCounter);
+                
             } else
             {
                 // in case we ended our playlist
                 _hasStarted = false;
                 // invoke initPlay after replayDelay
                 Invoke("InitPlay", replayDelay);
-                Debug.Log("Will replay after " + replayDelay + " Seconds");
+                
             }
         }
     }
@@ -74,6 +78,14 @@ public class LoopableAudioPlayer : MonoBehaviour {
 
     public void ResetQuizz()
     {
+        _hasStarted = false;
+        if (_audioSource.clip != null)
+        {
+            if (_audioSource.isPlaying)
+            {
+                _audioSource.Stop();
+            }
+        }
         if(clipsList.Count > 0)
         {
             clipsList.Clear();
@@ -85,5 +97,15 @@ public class LoopableAudioPlayer : MonoBehaviour {
     {
         clipsList.Add(clip);
         InitPlay();
+    }
+
+    public void StopAudio()
+    {
+        _hasStarted = false;
+        if (_audioSource.clip != null)
+        {
+            _audioSource.Stop();
+            CancelInvoke("InitPlay");
+        }
     }
 }

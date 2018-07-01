@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Flana/Scenes/SetupScene.unity
+    guid: 743581d2d861e2d459c409362952fed9
+  - enabled: 1
+    path: Assets/Flana/Scenes/GameScene.unity
+    guid: 44835ad6d565c394ca410a9439b9b65a
